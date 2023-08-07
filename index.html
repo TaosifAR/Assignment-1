@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('img223.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 400px;
+            margin: 10px;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.7); 
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .send-button {
+            display: block;
+            height: 35px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            font-size: 15px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .send-button:hover {
+            background-color: #0056b3;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #a85656;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .logo-circle img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            padding: 20px 80px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+        .login-button{ 
+            display: block;
+            height: 35px;
+            width: 100%;
+            padding: 10px;
+            background-color: #a24545;
+            color: #fff;
+            border: none;
+            font-size: 15px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .login1-button,
+        .add-to-cart-button,
+        .download-button,
+        .comment-button {
+           
+            display: inline-flex;
+            align-items: center;
+            padding: 30px 110px;
+            border: none;
+            border-radius: 50px;
+            font-size:30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            color: white;
+        }
+        .login1-button { background: linear-gradient(45deg, #ff8800, #302722); }
+       
+        .login-button:hover { background: linear-gradient(45deg, #ff5500, #ff8800); }
+        .add-to-cart-button { background: linear-gradient(45deg, #00cc66, #283d2f); }
+        .add-to-cart-button:hover { background: linear-gradient(45deg, #009933, #00cc66); }
+        .download-button { background: linear-gradient(45deg, #0077b3, #333e47); }
+        .download-button:hover { background: linear-gradient(45deg, #005299, #0077b3); }
+        .comment-button { background: linear-gradient(45deg, #9933cc, #332639); }
+        .comment-button:hover { background: linear-gradient(45deg, #660099, #9933cc); }
+        .button-text { margin-right: 10px; }
+        .login-icon, .cart-icon, .download-icon, .comment-icon {
+            width: 30px;
+            height: 30px;
+        }
+        .calendar {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .calendar-header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar-day {
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        .calendar-day:hover {
+            background-color: #f0f0f0;
+        }
+        
+    .banner {
+    position: relative;
+    height:500px;
+    width: 800px;
+    margin-top: 30px;
+    background-image: url('back1.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-color: rgba(52, 152, 219, 0.7); /* Fallback color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  .purchase-button {
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    transform: translateY(-50%);
+    background: linear-gradient(to bottom, #eb7ca2, #443331); /* Gradient color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .footer {
+    background-color: #2e2655;
+    color: white;
+    height:500px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    border-radius: 20px;
+    margin-top: 30px;
+    flex-direction: column;
+
+    justify-content: space-between;
+   
+  }
+  .footer-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .footer-links {
+  
+margin-left: 20px;
+  }
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+  .copyright {
+    border-top: 1px solid white;
+    padding-top: 10px;
+  }
+
+  .card-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.card {
+  border: 1px solid #ddd;
+  background: linear-gradient(180deg, #f3f3f3 0%, #ffffff 100%);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 250px;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 50px;
+  height: auto;
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(45deg, #00cc66, #283d2f);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 50px;
+ 
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(45deg, #009933, #00cc66);
+}
+.box-container {
+  display: flex;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #ffdd00;
+  margin: 10px;
+}
+
+    </style>
+     
+</head>
+<body>
+    <h1>Banner</h1>
+    <div class="banner">
+           
+        <h1>Welcome to Our Store!</h1>
+        <p>Check out our amazing products.</p>
+        <button class="purchase-button">Purchase Now</button>
+       
+   
+
+      </div>
+      <h1>Flexbox</h1>
+    </div>
+    <div class="box-container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  
+      
+<h1>Form</h1>
+
+    <div class="container">
+        <h2>Contact Form</h2>
+        <form action="/submit_form" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="send-button">Send</button>
+        </form>
+    </div>
+    <h1>login form</h1>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="user.jpg" alt="User Logo">
+            </div>
+        </div>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="email">Email or Phone</label>
+                <input type="text" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+        <div class="signup-link">
+            <a href="#">Create New Account</a>
+        </div>
+    </div>
+<h1>Buttons</h1>
+    <div class="button-container">
+        <button class="login1-button">
+            <span class="button-text">LOG IN</span>
+            <img src="logoin.png" alt="Login Icon" class="login-icon">
+        </button>
+        <button class="add-to-cart-button">
+            <span class="button-text">ADD TO CART</span>
+            <img src="basket.png" alt="Cart Icon" class="cart-icon">
+        </button>
+        <button class="download-button">
+            <span class="button-text">DOWNLOAD</span>
+            <img src="dwonload.png" alt="Download Icon" class="download-icon">
+        </button>
+        <button class="comment-button">
+            <span class="button-text">COMMENT</span>
+            <img src="cmnt.png" alt="Comment Icon" class="comment-icon">
+        </button>
+    </div>
+    <h1>Calender</h1>
+    
+        <div class="calendar">
+            <div class="calendar-header">
+                August 2023
+            </div>
+            <table class="calendar-table">
+                <tr>
+                    <th class="calendar-day">Sun</th>
+                    <th class="calendar-day">Mon</th>
+                    <th class="calendar-day">Tue</th>
+                    <th class="calendar-day">Wed</th>
+                    <th class="calendar-day">Thu</th>
+                    <th class="calendar-day">Fri</th>
+                    <th class="calendar-day">Sat</th>
+                </tr>
+                <tr>
+                    <td class="calendar-day"></td>
+                    <td class="calendar-day"></td>
+                    <td class="calendar-day"></td>
+                    <td class="calendar-day"></td>
+                    <td class="calendar-day">1</td>
+                    <td class="calendar-day">2</td>
+                    <td class="calendar-day">3</td>
+                </tr>
+                <tr>
+                    <td class="calendar-day">4</td>
+                    <td class="calendar-day">5</td>
+                    <td class="calendar-day">6</td>
+                    <td class="calendar-day">7</td>
+                    <td class="calendar-day">8</td>
+                    <td class="calendar-day">9</td>
+                    <td class="calendar-day">10</td>
+                </tr>
+                <tr>
+                    <td class="calendar-day">11</td>
+                    <td class="calendar-day">12</td>
+                    <td class="calendar-day">13</td>
+                    <td class="calendar-day">14</td>
+                    <td class="calendar-day">15</td>
+                    <td class="calendar-day">16</td>
+                    <td class="calendar-day">17</td>
+                </tr>
+                <tr>
+                    <td class="calendar-day">18</td>
+                    <td class="calendar-day">19</td>
+                    <td class="calendar-day">20</td>
+                    <td class="calendar-day">21</td>
+                    <td class="calendar-day">22</td>
+                    <td class="calendar-day">23</td>
+                    <td class="calendar-day">24</td>
+                </tr>
+                <tr>
+                    <td class="calendar-day">25</td>
+                    <td class="calendar-day">26</td>
+                    <td class="calendar-day">27</td>
+                    <td class="calendar-day">28</td>
+                    <td class="calendar-day">29</td>
+                    <td class="calendar-day">30</td>
+                    <td class="calendar-day">31</td>
+                </tr>
+            </table>
+            
+        </div>
+       
+     <h1>Card Groups</h1>
+        
+        <div class="card-group">
+            <div class="card">
+              <img src="watch.jpg" alt="Product 1">
+              <h3>Product 1</h3>
+              <p>Description of Product 1</p>
+              <p>$19.99</p>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="card">
+              <img src="shoes.jpg" alt="Product 2">
+              <h3>Product 2</h3>
+              <p>Description of Product 2</p>
+              <p>$24.99</p>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="card">
+              <img src="messi.png" alt="Product 3">
+              <h3>Product 3</h3>
+              <p>Description of Product 3</p>
+              <p>$29.99</p>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+<h1>Footer Section</h1>
+          <div class="footer">
+            <div class="footer-details">
+              <div class="footer-links">
+                <a href="#">About Us</a>
+              </div>
+              <div class="footer-links">
+                <a href="#">Contact Us</a>
+              </div>
+            </div>
+         
+            <p class="copyright">&copy; 2023 Your Company Name. All rights reserved.</p>
+         
+        
+</body>
+</html>
